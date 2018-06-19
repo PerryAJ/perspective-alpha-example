@@ -76,8 +76,11 @@ Within the `web` directory is a _lerna workspace_, which is simply a javascript 
   served from.  That they are named `client` or `designer` is unimportant.  They could be `browser` and `designer` or
   whatever you choose.  The important part is making sure the files are appropriately registered in the appropriate
   registries. 
+
   
-  ```
+```
+
+
   ├── build.gradle.kts                     // root build configuration, like a root pom.xml file
   ├── common                                
   │   ├── build.gradle.kts                 // configuration for common scoped build
@@ -91,7 +94,7 @@ Within the `web` directory is a _lerna workspace_, which is simply a javascript 
   │   ├── build.gradle.kts
   │   └── src
   │       └── main/java
-  ├── gradle                              // gradle wrapper assets to allow wrapper functionality - should be commited
+  ├── gradle                              // gradle wrapper assets to allow wrapper functionality,should be commited
   │   └── wrapper
   │       ├── gradle-wrapper.jar
   │       └── gradle-wrapper.properties
