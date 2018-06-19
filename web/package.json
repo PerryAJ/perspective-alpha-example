@@ -1,0 +1,21 @@
+{
+  "name": "web-example",
+  "version": "1.0.0-dev",
+  "description": "example web package to distribute to nexus npm",
+  "main": "dist/index.js",
+  "author": "perry arellano-jones",
+  "license": "MIT",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "build": "lerna run build",
+    "clean": "lerna clean",
+    "check": "lerna check"
+  },
+  "devDependencies": {
+    "lerna": "^2.11.0",
+    "yarn": "^1.7.0"
+  }
+}
