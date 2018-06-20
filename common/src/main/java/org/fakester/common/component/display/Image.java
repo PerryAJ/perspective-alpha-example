@@ -41,7 +41,7 @@ public class Image {
         .withType(COMPONENT_ID)
         .withModuleId(RadComponents.MODULE_ID)
         .withSchema(DEFAULT_PROPS)
-        .withPaletteName(LocalizedString.createRaw("Image"))
+        .withPaletteName(LocalizedString.createRaw("RadImage"))
         .withResources(RadComponents.BROWSER_RESOURCES)
         .build();
 }

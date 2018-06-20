@@ -22,19 +22,16 @@ export class Image extends Component<ComponentProps, any> {
     render() {
         // the props we're interested in
 
-        const { props, layout } = this.props;
+        const { props } = this.props;
         // read the 'url' property provided by the perspective gateway via the component 'props'.
         const propUrl: string = props.read('url');
-        const userStyle = props.read("style", undefined);
 
         // note that the topmost piece of dom requires the application of events, style and className as shown below
         // otherwise the layout won't work, or any events configured will fail.
         return (
             <img
-                src={propUrl}
-                style={layout.style(userStyle)}
                 {...this.props.emit()}
-                className={layout.classes()}
+                src={propUrl}
             />
         );
     }

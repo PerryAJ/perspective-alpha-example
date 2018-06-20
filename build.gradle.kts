@@ -3,8 +3,6 @@ import java.util.stream.Collectors
 
 
 buildscript {
-
-
     repositories {
         gradlePluginPortal()
         mavenLocal()
@@ -95,6 +93,12 @@ allprojects {
         mavenCentral()
         google()
         jcenter()
+
+        maven {
+            name = "teamdev"
+            url = uri("http://maven.teamdev.com/repository/products")
+
+        }
         maven {
             name = "snapshots"
             url = uri("http://nexus.inductiveautomation.com/repository/inductiveautomation-snapshots/")
@@ -109,8 +113,9 @@ allprojects {
             name = "releases"
             url = uri("http://nexus.inductiveautomation.com/repository/inductiveautomation-releases/")
         }
+       }
     }
-}
+
 
 tasks {
     val wrapper by getting(Wrapper::class) {

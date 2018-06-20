@@ -9,6 +9,7 @@ java {
 }
 
 dependencies {
+    toModl("com.inductiveautomation.ignitionsdk:ignition-common:8.0.0-SNAPSHOT")
     // compileOnly is the gradle equivalent to "provided" scope.
     compileOnly("com.inductiveautomation.ignitionsdk:ignition-common:8.0.0-SNAPSHOT")
     compileOnly("com.inductiveautomation.ignitionsdk:perspective-common:8.0.0-SNAPSHOT")
