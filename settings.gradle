@@ -8,26 +8,25 @@ pluginManagement {
         mavenCentral()
         jcenter()
         maven {
-            name = "snapshots"
-            url = uri("http://nexus.inductiveautomation.com/repository/inductiveautomation-snapshots/")
+            name "snapshots"
+            url "http://nexus.inductiveautomation.com/repository/inductiveautomation-snapshots/"
         }
 
         maven {
-            name = "thirdparty"
-            url = uri("http://nexus.inductiveautomation.com/repository/inductiveautomation-thirdparty/")
+            name "thirdparty"
+            url "http://nexus.inductiveautomation.com/repository/inductiveautomation-thirdparty/"
         }
 
         maven {
-            name = "releases"
-            url = uri("http://nexus.inductiveautomation.com/repository/inductiveautomation-releases/")
+            name "releases"
+            url "http://nexus.inductiveautomation.com/repository/inductiveautomation-releases/"
         }
     }
 
     // set to use the local module build when resolving the plugin (for ease of development)
     resolutionStrategy {
         eachPlugin {
-            when (requested.id.id) {
-                "ignition-module-plugin" ->
+           if (requested.id.id == "ignition-module-plugin") {
                     useModule("com.inductiveautomation.gradle:ignition-module-plugin:${requested.version}")
             }
         }
