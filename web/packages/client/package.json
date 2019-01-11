@@ -6,18 +6,19 @@
     "typings": "dist/typings/example-client.d.ts",
     "license": "UNlICENSED",
     "scripts": {
-        "build": "npm run lint && tsc && webpack",
+        "build:client": "yarn run build:client",
+        "build": "yarn run lint && tsc && webpack",
         "lint": "tslint -p tsconfig.json -c tslint.json typescript/**/*.tsx typescript/**/*.ts -t stylish",
-        "check": "npm test && npm run lint",
+        "check": "yarn test && yarn run lint",
         "clean": "rimraf dist .awcache",
         "deepClean": "npm run clean && rimraf node_modules __coverage__"
     },
     "dependencies": {
-        "@inductiveautomation/perspective-client": "^0.0.1-alpha4",
+        "@inductiveautomation/perspective-client": "^0.0.1-alpha5",
         "mobx": "^3.4.1",
         "mobx-react": "^4.3.5",
-        "react": "^16.2.0",
-        "react-dom": "^16.2.0"
+        "react": "^16.6.3",
+        "react-dom": "^16.6.3"
     },
     "devDependencies": {
         "@types/history": "^4.6.0",

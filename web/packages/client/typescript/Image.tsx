@@ -32,6 +32,7 @@ export class Image extends Component<ComponentProps, any> {
             <img
                 {...this.props.emit()}
                 src={propUrl}
+                alt={"rad component image"}
             />
         );
     }

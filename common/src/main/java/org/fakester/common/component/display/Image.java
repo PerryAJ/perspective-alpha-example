@@ -37,11 +37,10 @@ public class Image {
      * build the descriptor for this one component.
      */
     public static ComponentDescriptor DESCRIPTOR = ComponentDescriptorImpl.ComponentBuilder.component()
-        .withCategory("display")
-        .withType(COMPONENT_ID)
+        .withId(COMPONENT_ID)
         .withModuleId(RadComponents.MODULE_ID)
         .withSchema(DEFAULT_PROPS)
-        .withPaletteName(LocalizedString.createRaw("RadImage"))
+        .withPaletteName("Rad Image")
         .withResources(RadComponents.BROWSER_RESOURCES)
         .build();
 }

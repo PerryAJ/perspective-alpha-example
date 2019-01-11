@@ -6,19 +6,20 @@
     "typings": "dist/typings/example-designer.d.ts",
     "license": "UNlICENSED",
     "scripts": {
-        "build": "npm run lint && tsc && webpack",
+        "build:designer": "yarn run build",
+        "build": "yarn run lint && tsc && webpack",
         "lint": "tslint -p tsconfig.json -c tslint.json typescript/**/*.tsx typescript/**/*.ts -t stylish",
-        "check": "npm test && npm run lint",
+        "check": "npm test && yarn run lint",
         "clean": "rimraf dist .awcache",
         "deepClean": "npm run clean && rimraf node_modules __coverage__"
     },
     "dependencies": {
-        "@inductiveautomation/perspective-client": "^0.0.1-alpha4",
-        "@inductiveautomation/perspective-designer": "^0.0.1-alpha4",
+        "@inductiveautomation/perspective-client": "^0.0.1-alpha5",
+        "@inductiveautomation/perspective-designer": "^0.0.1-alpha5",
         "@myCompanyNamespace/example-client": "1.0.0-dev",
         "bind-decorator": "^1.0.11",
-        "react": "^16.2.0",
-        "react-dom": "^16.2.0"
+        "react": "^16.6.3",
+        "react-dom": "^16.6.3"
     },
     "devDependencies": {
         "@types/jsnlog": "^2.17.35",
