@@ -69,7 +69,7 @@ task webpack(type: NpmTask) {
 task deleteDistFolders(type: Delete) {
     delete(
             project.fileTree("packages").matching {
-                include("**/dist/**", "**/.awcache/**")
+                include("client/dist/**", "designer/dist/**")
             }.files
     )
 }

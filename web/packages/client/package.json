@@ -6,28 +6,30 @@
     "typings": "dist/typings/example-client.d.ts",
     "license": "UNlICENSED",
     "scripts": {
-        "build": "npm run lint && tsc && webpack",
+        "build": "npm run lint && tsc && webpack --mode development",
         "lint": "tslint -p tsconfig.json -c tslint.json typescript/**/*.tsx typescript/**/*.ts -t stylish",
         "check": "npm test && npm run lint",
         "clean": "rimraf dist .awcache",
         "deepClean": "npm run clean && rimraf node_modules __coverage__"
     },
     "dependencies": {
-        "@inductiveautomation/perspective-client": "^0.0.1-alpha4",
+        "@inductiveautomation/perspective-client": "^0.0.1-alpha5",
         "mobx": "^3.4.1",
         "mobx-react": "^4.3.5",
-        "react": "^16.2.0",
-        "react-dom": "^16.2.0"
+        "react": "^16.7.0",
+        "react-dom": "^16.7.0"
     },
     "devDependencies": {
         "@types/history": "^4.6.0",
         "@types/moment-timezone": "^0.5.3",
-        "awesome-typescript-loader": "^3.4.1",
+        "ts-loader": "^5.3.3",
         "babel-core": "^6.26.3",
         "on-build-webpack": "^0.1.0",
-        "tslint": "^5.8.0",
+        "tslint": "^5.12.1",
         "tslint-react": "^3.4.0",
-        "typescript": "^2.6.2",
-        "webpack": "^3.10.0"
+        "typescript": "^3.2.2",
+        "webpack": "^4.28.4",
+        "webpack-cli": "^3.2.1",
+        "yarn": "^1.13.0"
     }
 }

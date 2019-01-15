@@ -24,13 +24,13 @@ buildscript {
     }
 
     dependencies {
-        classpath("com.inductiveautomation.gradle:ignition-module-plugin:1.2.8")
+        classpath("com.inductiveautomation.gradle:ignition-module-plugin:1.2.9")
     }
 }
 
 plugins {
     id "base"
-    id "ignition-module-plugin" version "1.2.8"  // same version as that used above in buildscript config
+    id "ignition-module-plugin" version "1.2.9"  // same version as that used above in buildscript config
 }
 
 version "1.0.0-SNAPSHOT"
@@ -121,3 +121,5 @@ wrapper {
     gradleVersion = "4.8"
     distributionUrl = "https://services.gradle.org/distributions/gradle-$gradleVersion-all.zip"
 }
+
+

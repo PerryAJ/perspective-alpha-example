@@ -27,8 +27,8 @@ pluginManagement {
     resolutionStrategy {
         eachPlugin {
            if (requested.id.id == "ignition-module-plugin") {
-                    useModule("com.inductiveautomation.gradle:ignition-module-plugin:${requested.version}")
-            }
+               useModule("com.inductiveautomation.gradle:ignition-module-plugin:${requested.version}")
+           }
         }
     }
 }
