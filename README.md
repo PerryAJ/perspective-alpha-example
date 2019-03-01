@@ -2,7 +2,15 @@
 
 This is a simple example module which adds components to the Perspective module's set of components.
 
-## Quick Tool Overview
+## Quick Start
+
+Clone this repo, navigate to the root (where gradle.settings file is), run `./gradlew buildUnsignedModule` (linux/mac) or `gradle.bat buildUnsignedModule`.
+
+To build a complete signed module, configure your sign.props file with the information required for signing and run `./gradlew buildSignedModule` (again, substitute `gradle.bat` for Windows)
+
+To see a full list of gradle tasks available, run `./gradlew tasks`.
+
+## Tool Overview
 
 This project uses a number of build tools in order to complete the various parts of its assembly.  Namely:
 
@@ -36,7 +44,7 @@ This is a quick-start set of requirements/commands to get this project built.
 ### Requirements
 
 
-1. Need npm/node installed, which will allow the installation of yarn, typescript, webpack, etc.  MacOs and Linux can
+1. To build the front-end assets outside of the gradle build (e.g., for development environments), you need npm/node installed, which will allow the installation of yarn, typescript, webpack, etc.  MacOs and Linux can
 install via package managers, or they and Windows can be installed via the downloads at the 
 [NodeJS Website](https://nodejs.org/).   We recommend sticking with the LTS versions (actual versions used by the build)
 can be seen in the `./web/build.gradle.kts` file, within the `node` configuration block.
@@ -45,7 +53,7 @@ can be seen in the `./web/build.gradle.kts` file, within the `node` configuratio
 it's useful to have them installed locally to speed build times and run local checks and commands without gradle.  In
 general, you want these to be the same (or very close) version as those defined in your package.json files.  
     1. `npm install -g typescript`
-    2. `npm install -g webpack@3.10.1`   // or whatever version you want
+    2. `npm install -g webpack`
     3. `npm install -g tslint`
     4. `npm install -g lerna`
     5. `npm install -g yarn`
@@ -53,10 +61,9 @@ general, you want these to be the same (or very close) version as those defined 
 3. Gradle - gradle does not need to be installed if commands are executed through the gradle wrapper (see 
 [Gradle Wrapper Docs](https://docs.gradle.org/current/userguide/gradle_wrapper.html) for details).
 
-
 Quick Note:  This example is built using a custom gradle module plugin.  This plugin was originally intended for 
 internal use and, as a result, it makes some assumptions about project structure and dependencies.  A full, open-source
- and public gradle plugin is in progress and will be published publicly in late June/Early July timeline.  The new 
+ and public gradle plugin is in planned for publication.  The new 
  plugin contains updates to support newer gradle features, improved build times, a simpler configuration API, 
  and will be useable in both groovy and kotlinscript gradle buildscript files.
  
@@ -125,7 +132,7 @@ Note this tree depicts kotlinscript build files, which are an alternative to gro
  
 ### Building
 
-Building this module requires a couple one-time setup commands, and then the build command which is repeated as needed.
+Building this module outside of the gradle tasks requires a couple one-time setup commands, and then the build command which is repeated as needed.
  
 1.  First, we want to link up our front end resources, so in the command prompt, navigate to the `web` folder and run
 `lerna bootstrap`, which will configure the sub-projects so that `web/packages/designer` can depend on 
