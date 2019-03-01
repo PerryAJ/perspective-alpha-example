@@ -4,9 +4,9 @@ This is a simple example module which adds components to the Perspective module'
 
 ## Quick Start
 
-Clone this repo, navigate to the root (where gradle.settings file is), run `./gradlew buildUnsignedModule` (linux/mac) or `gradle.bat buildUnsignedModule`.
+Clone this repo, navigate to the root (where gradle.settings file is), run `./gradlew buildUnsignedModule` (linux/mac) or `gradlew.bat buildUnsignedModule`.
 
-To build a complete signed module, configure your sign.props file with the information required for signing and run `./gradlew buildSignedModule` (again, substitute `gradle.bat` for Windows)
+To build a complete signed module, configure your sign.props file with the information required for signing and run `./gradlew buildSignedModule` (again, substitute `gradlew.bat` for Windows)
 
 To see a full list of gradle tasks available, run `./gradlew tasks`.
 
@@ -144,7 +144,7 @@ the top level `package.json` version property, not versions of dependencies or d
 also done automatically by the gradle build, but we do it here initially as a sanity check.
 
 3. Navigate back to the root of the project, and in the terminal execute `./gradlew build` (linux/osx), or 
-`gradle.bat build` (windows).  This will result in the appropriate gradle binaries being downloaded (match the version
+`gradlew.bat build` (windows).  This will result in the appropriate gradle binaries being downloaded (match the version
  and info provided by our `wrapper` task and committed `gradle/` directory).  This will compile and assemble all jars,
  as well as execute the webpack.
  
