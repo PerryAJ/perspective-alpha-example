@@ -30,7 +30,6 @@ buildscript {
 
 plugins {
     id "base"
-    id "ignition-module-plugin" version "1.2.8"  // same version as that used above in buildscript config
 }
 
 version "1.0.0-SNAPSHOT"
@@ -118,6 +117,8 @@ allprojects {
 
 
 wrapper {
-    gradleVersion = "4.8"
+    gradleVersion = "5.2.1"
     distributionUrl = "https://services.gradle.org/distributions/gradle-$gradleVersion-all.zip"
 }
+
+

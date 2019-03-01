@@ -1,7 +1,6 @@
 const webpack = require('webpack'),
     path = require('path'),
-    fs = require('fs'),
-    { CheckerPlugin, TsConfigPathsPlugin } = require('awesome-typescript-loader');
+    fs = require('fs');
 
 const WebpackOnBuildPlugin = require('on-build-webpack');
 
@@ -59,26 +58,29 @@ var config = {
     resolve: {
         extensions: [".jsx", ".js", ".ts", ".tsx", ".d.ts"],
         modules: [
-            path.resolve(__dirname, "../../node_modules"),  // look at the local as well as shared node modules when resolving dependencies
-        ],
+            path.resolve(__dirname, "../../node_modules")  // look at the local as well as shared node modules when resolving dependencies
+        ]
     },
 
     module: {
         rules: [
-            // use the typescript loader for ts and tsx files, but don't bother looking in node modules
             {
                 test: /\.tsx?$/,
-                loader: 'awesome-typescript-loader',
-                exclude: /node_modules/,
+                use: {
+                    loader: 'ts-loader',
+                    options: {
+                        transpileOnly: false,
+                        experimentalWatchApi: true
+                    }
+                },
+                exclude: /node_modules/
             }
-        ],
+        ]
     },
     plugins: [
         new WebpackOnBuildPlugin(function(stats) {
             copyToResources();
-        }),
-        new CheckerPlugin(),  // checks the typescript for correctness
-        new TsConfigPathsPlugin(), // helps wire up the tsconfig paths we use so webpack resolves files correctly.
+        })
     ],
 
     // IMPORTANT -- this tells the webpack build tooling "don't include these things as part of the webpack bundle".

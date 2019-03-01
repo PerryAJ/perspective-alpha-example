@@ -77,6 +77,8 @@ Within the `web` directory is a _lerna workspace_, which is simply a javascript 
   whatever you choose.  The important part is making sure the files are appropriately registered in the appropriate
   registries. 
 
+
+Note this tree depicts kotlinscript build files, which are an alternative to groovy based build files.
   
 ```
 
@@ -151,5 +153,3 @@ also done automatically by the gradle build, but we do it here initially as a sa
  1. Any java dependencies you want to include in your module should be defined with the `toModl` configuration, rather
  than `compile`, `compileOnly` (or `implementation` or `api` if looking at most recent gradle docs).  This should
  be defined in the appropriate scope.
- 
-

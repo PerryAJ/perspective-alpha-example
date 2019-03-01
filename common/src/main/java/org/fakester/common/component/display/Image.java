@@ -1,6 +1,7 @@
 package org.fakester.common.component.display;
 
-import com.google.gson.JsonParser;
+import java.util.Objects;
+
 import com.inductiveautomation.ignition.common.jsonschema.JsonSchema;
 import com.inductiveautomation.perspective.common.api.ComponentDescriptor;
 import com.inductiveautomation.perspective.common.api.ComponentDescriptorImpl;
@@ -16,23 +17,11 @@ public class Image {
     public static String COMPONENT_ID = "rad.display.image";
 
     /**
-     * Default property schema.
-     */
-    private static String SCHEMA = "    {"
-                                   + "        \"type\": \"object\","
-                                   + "        \"properties\": {"
-                                   + "            \"url\": {"
-                                   + "                \"type\": \"string\","
-                                   + "                \"default\": \"/res/radcomponents/img/bananatime.gif\""
-                                   + "            }"
-                                   + "        }"
-                                   + "    }";
-
-    /**
      * The schema provided with the component descriptor. Use a schema instead of a plain JsonObject because it gives
      * us a little more type information, allowing the designer to highlight mismatches where it can detect them.
      */
-    public static JsonSchema DEFAULT_PROPS = new JsonSchema(new JsonParser().parse(SCHEMA));
+    public static JsonSchema SCHEMA =
+        JsonSchema.parse(RadComponents.class.getResourceAsStream("/radimage.props.json"));
 
     /**
      * Components register with the Java side ComponentRegistry but providing a ComponentDescriptor.  Here we
@@ -40,10 +29,13 @@ public class Image {
      */
     public static ComponentDescriptor DESCRIPTOR = ComponentDescriptorImpl.ComponentBuilder.component()
         .withPaletteCategory("display")
+        .withPaletteDescription("A simple image component")
         .withId(COMPONENT_ID)
         .withModuleId(RadComponents.MODULE_ID)
-        .withSchema(DEFAULT_PROPS)
-        .withPaletteName("Rad Image!")
+        .withSchema(SCHEMA) //  this could alternatively be created purely in Java if desired
+        .withPaletteName("Radness")
+        .withDefaultMetaName("radImage")
+        .shouldAddToPalette(true)
         .withResources(RadComponents.BROWSER_RESOURCES)
         .build();
 }
