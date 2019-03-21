@@ -91,7 +91,7 @@ var config = {
         "mobx-react": "mobxReact",
         "@inductiveautomation/perspective-client": "PerspectiveClient",
         "@inductiveautomation/perspective-designer": "PerspectiveDesigner"
-    },
+    }
 };
 
 

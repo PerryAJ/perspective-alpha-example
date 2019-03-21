@@ -8,18 +8,7 @@ buildscript {
         mavenCentral()
         jcenter()
         maven {
-            name "snapshots"
-            url "http://nexus.inductiveautomation.com/repository/inductiveautomation-snapshots/"
-        }
-
-        maven {
-            name "thirdparty"
-            url "http://nexus.inductiveautomation.com/repository/inductiveautomation-thirdparty/"
-        }
-
-        maven {
-            name "releases"
-            url "http://nexus.inductiveautomation.com/repository/inductiveautomation-releases/"
+            url "http://nexus.ia.local:8081/repository/ia-maven-group/"
         }
     }
 
@@ -99,18 +88,7 @@ allprojects {
 
         }
         maven {
-            name "snapshots"
-            url "http://nexus.inductiveautomation.com/repository/inductiveautomation-snapshots/"
-        }
-
-        maven {
-            name "thirdparty"
-            url "http://nexus.inductiveautomation.com/repository/inductiveautomation-thirdparty/"
-        }
-
-        maven {
-            name "releases"
-            url "http://nexus.inductiveautomation.com/repository/inductiveautomation-releases/"
+            url "http://nexus.ia.local:8081/repository/ia-maven-group/"
         }
        }
     }

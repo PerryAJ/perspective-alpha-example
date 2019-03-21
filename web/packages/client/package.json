@@ -13,23 +13,26 @@
         "deepClean": "npm run clean && rimraf node_modules __coverage__"
     },
     "dependencies": {
-        "@inductiveautomation/perspective-client": "^0.0.1-alpha5",
-        "mobx": "^3.4.1",
-        "mobx-react": "^4.3.5",
-        "react": "^16.7.0",
-        "react-dom": "^16.7.0"
+        "@inductiveautomation/perspective-client": "^0.0.1-beta.0",
+        "mobx": "5.9.0",
+        "mobx-react": "5.4.3",
+        "react": "16.8.4",
+        "react-dom": "16.8.4"
     },
     "devDependencies": {
         "@types/history": "^4.6.0",
+        "@types/jsnlog": "2.17.35",
         "@types/moment-timezone": "^0.5.3",
-        "ts-loader": "^5.3.3",
+        "@types/react": "16.8.8",
+        "@types/react-dom": "16.8.3",
         "babel-core": "^6.26.3",
         "on-build-webpack": "^0.1.0",
-        "tslint": "^5.12.1",
-        "tslint-react": "^3.4.0",
-        "typescript": "^3.2.2",
-        "webpack": "^4.28.4",
-        "webpack-cli": "^3.2.1",
-        "yarn": "^1.13.0"
+        "ts-loader": "5.3.3",
+        "tslint": "5.14.0",
+        "tslint-react": "^3.6.0",
+        "typescript": "3.3.4000",
+        "webpack": "4.29.6",
+        "webpack-cli": "3.3.0",
+        "yarn": "^1.15.2"
     }
 }

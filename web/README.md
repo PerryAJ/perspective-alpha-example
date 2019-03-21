@@ -3,16 +3,13 @@
 This folder contains all the Typescript source files for the custom component set.  This readme contains information
 about the tools/requirements used to build the final JS that can be used for perspective.
 
-
-See the _Terms_ section before for definitions of terms.
-
 ## Requirements ##
 
 There are two different ways to build these component resources.  The easiest is to simply allow Gradle to handle the build by 
-running `./gradlew :web:build` (osx) or `gradle.bat :web:build` (windows) from the root of the project.  Doing this will 
+running `./gradlew :web:build` (macOs/linux) or `gradle.bat :web:build` (windows) from the root of the project.  Doing this will 
 download Node, Npm, Yarn, with versions set to those specified in the `web/build.gradle` configuration file.
 
-It will then execute the typescript compilation using these downloaded binaries.  
+It will then execute the typescript compilation using these downloaded binaries.
 
 Alternatively, the packages can be built at the commandline, but require locally (user) installed versions of the 
 following dependencies:
@@ -23,9 +20,9 @@ following dependencies:
 * Tslint
 * Webpack 
 * Lerna
+* Yarn
 
-Versions of these dependencies are defined in the `web/package.json`'s _devDependencies_ section.  This specific
-package.json defines shared dev dependency configurations used by the subprojects in 'web/packages/'  
+Versions of these dependencies are defined in the `package.json` files found in the web/ directory, generally as  _devDependencies_ section.  The root package.json defines shared dev dependency configurations used by the subprojects in 'web/packages/'  
 
 The suggested install route for these is to install the latest LTS version of NPM (which will also install Node) as per 
 the typical npm install route, and then use npm itself to install the other dependencies.
@@ -47,7 +44,7 @@ built.
 * *Webpack* - a 'bundler', which is ultimately a build tool that combines or _bundles_ the necessary files/source into something
 that may be used as a `<script>` file on a web page.  Through plugins/configuration, it can strip excess/unused/unreachable 
 code, minify, uglify, create source maps for browser-enabled debugging, etc.  The configuration provided in this example
-is a bare-minimum 'simple use' case which includes the use of the _Awesome Typescript Loader_ to manager the typescript
+is a bare-minimum 'simple use' case which includes the use of the _Typescript Loader_ to manager the typescript
 compilation prior to bundling.
 * *Typescript* - A superset of Javascript, which allows for strong typing, fuller OOP support.  Ultimately compiles
  (sometimes called _transpiles_ ) to javascript.  Javascript version compatibility depends on configuration of 
@@ -56,11 +53,12 @@ compilation prior to bundling.
 
 ## Directory Structure Information ##
 
-Perspective has different scopes, much like Vision.  The 'client' scope refers to a perspective project running in a 
+Perspective has different 'scopes', much like Vision.  The 'client' scope refers to a perspective project running in a 
 web browser.  The 'designer' scope refers to a perspective project executing in the Ignition Designer's Perspective View
-Workspace (perspective resource editor).  These scopes are distinct in that the designer may have UI/runtime elements
-that are not present in the client, such as design-specific layout guides/ui, 'rulers', and 'interaction delegates' 
-implemented by advanced components and containers in order to provide additional functionality in the designer.  
+Workspace (perspective resource editor).  Similar to the OOP principles used in Vision, perspective's designer scope 
+builds on top of the client scope, adding designer-specific functionality.  
+
+These scopes are distinct in that the designer may have UI/runtime elements that are not present in the client, such as design-specific layout guides/ui,'rulers', and 'interaction delegates' implemented by advanced components and containers in order to provide additional functionality in the designer.  
 
 As a result, we have two different folders under the 'packages' directory - one for client which is loaded when a 
 project loads and executes once published.  The other for the designer, which depends on and may extend the client 
@@ -105,13 +103,12 @@ of the `web` folder, and will establish the dependencies for child packages.
 
 ## Notes ## 
 
-* Typescript, webpack, etc, is not required, but is recommended.  
-* Typescript's compilation output is, in effect, 'streamed'  to the input of webpack through the awesome-typescript-loader.
+* Typescript, webpack, etc, is not required to build a module with components for Perspective. We recommend it as best
+practice, but you are free to create your javascript any way you would prefer. 
 * dist/ contains the final output of a build
 * The webpack build finalizes with the copying of the webpacked resources from each packages `dist/` folder into the
 gateway scoped `resources/mounted/js/` folder, which is where perspective will look to retrieve them.  This location is
 registered as part of the GatewayHook.
-
 
 
 ## Terms ##
